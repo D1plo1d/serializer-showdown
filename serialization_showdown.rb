@@ -12,11 +12,12 @@ module SerializationShowdown
     [
       # Elixir Serializers
       # ---------------------
-      # [:elixir, :MessagePackElixir], # <= This is just broken
-      # [:elixir, :Json], # <= This is *very* slow!
+      # [:elixir, :MessagePackElixir], # <= broken - unable to encode
+      # [:elixir, :Json], #              <= This is *very* slow!
       [:elixir, :Poison],
       [:elixir, :Msgpax],
       [:elixir, :Exjsx],
+      [:elixir, :Jiffy],
 
       # Ruby Serializers
       # ---------------------

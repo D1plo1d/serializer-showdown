@@ -21,7 +21,8 @@ defmodule SerializationShowdown.Mixfile do
       {:msgpax, "~> 0.5"},
       {:json, "~> 0.3.0"},
       {:exjsx, "~> 3.1.0"},
-      {:poison, "~> 1.3.1"}
+      {:poison, "~> 1.3.1"},
+      {:jiffy, github: "davisp/jiffy"},
     ]
   end
 end

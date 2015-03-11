@@ -20,17 +20,19 @@ Running the benchmarks on my 2011 Macbook Air (OSX 10.9.5) yeilds the following:
 
 Language             Deserializer         Real Time
 --------------------------------------------------------------------------------
-Elixir               Poison                8.91938
-Elixir               Msgpax                5.35549
-Elixir               Exjsx                11.88917
-Ruby                 Json                  5.23875
-Ruby                 Msgpack               2.36682
+Elixir               Poison                9.21832
+Elixir               Msgpax                5.39049
+Elixir               Exjsx                12.27880
+Elixir               Jiffy                 1.45259
+Ruby                 Json                  5.44228
+Ruby                 Msgpack               2.49035
 
 Language             Serializer           Real Time
 --------------------------------------------------------------------------------
-Elixir               Poison               47.03580
-Elixir               Msgpax               25.02741
-Elixir               Exjsx                33.39393
-Ruby                 Json                  3.90487
-Ruby                 Msgpack               0.56568
+Elixir               Poison               49.65933
+Elixir               Msgpax               27.20542
+Elixir               Exjsx                33.68249
+Elixir               Jiffy                 3.07260
+Ruby                 Json                  4.00482
+Ruby                 Msgpack               0.57596
 ```
