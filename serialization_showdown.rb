@@ -53,7 +53,7 @@ module SerializationShowdown
 
   def self.run(language, serializer, method)
     time = send :"run_#{language}_serializer", serializer, method
-    print_column language.capitalize, serializer, time.round(3)
+    print_column language.capitalize, serializer, ("%.5f" % time).rjust(8)
   end
 
   def self.run_ruby_serializer(serializer, method)
