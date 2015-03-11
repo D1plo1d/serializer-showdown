@@ -3,5 +3,6 @@
   "json": {:hex, :json, "0.3.2"},
   "jsx": {:hex, :jsx, "2.4.0"},
   "message_pack": {:hex, :message_pack, "0.1.4"},
+  "msgpack": {:git, "git://github.com/msgpack/msgpack-erlang.git", "c666a5f6568ac2e15687bb155442025dbb8b74ff", [branch: "master"]},
   "msgpax": {:hex, :msgpax, "0.6.0"},
   "poison": {:hex, :poison, "1.3.1"}}

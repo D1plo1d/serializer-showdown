@@ -23,6 +23,7 @@ defmodule SerializationShowdown.Mixfile do
       {:exjsx, "~> 3.1.0"},
       {:poison, "~> 1.3.1"},
       {:jiffy, github: "davisp/jiffy"},
+      {:msgpack, github: "msgpack/msgpack-erlang", branch: "master"}
     ]
   end
 end

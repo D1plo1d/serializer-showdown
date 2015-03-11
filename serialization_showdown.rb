@@ -18,6 +18,7 @@ module SerializationShowdown
       [:elixir, :Msgpax],
       [:elixir, :Exjsx],
       [:elixir, :Jiffy],
+      [:elixir, :MsgpackErlang],
 
       # Ruby Serializers
       # ---------------------
