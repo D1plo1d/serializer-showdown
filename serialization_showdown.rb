@@ -14,6 +14,7 @@ module SerializationShowdown
       # ---------------------
       # [:elixir, :MessagePackElixir], # <= This is just broken
       # [:elixir, :Json], # <= This is *very* slow!
+      [:elixir, :Poison],
       [:elixir, :Msgpax],
       [:elixir, :Exjsx],
 

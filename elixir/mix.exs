@@ -20,7 +20,8 @@ defmodule SerializationShowdown.Mixfile do
       {:message_pack, "~> 0.1.4"},
       {:msgpax, "~> 0.5"},
       {:json, "~> 0.3.0"},
-      {:exjsx, "~> 3.1.0"}
+      {:exjsx, "~> 3.1.0"},
+      {:poison, "~> 1.3.1"}
     ]
   end
 end
