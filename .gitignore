@@ -39,3 +39,4 @@ vendor/assets/javascripts/bower_components
 
 /elixir/_build
 /elixir/deps
+/nodejs/node_modules

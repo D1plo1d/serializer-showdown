@@ -23,7 +23,12 @@ module SerializationShowdown
       # Ruby Serializers
       # ---------------------
       [:ruby,   :Json],
-      [:ruby,   :Msgpack]
+      [:ruby,   :Msgpack],
+
+      # Node Serializers
+      # ---------------------
+      [:nodejs, :Json],
+      [:nodejs, :Msgpack]
     ]
   end
 
@@ -67,14 +72,25 @@ module SerializationShowdown
   end
 
   def self.run_elixir_serializer(serializer, method)
-    cmd = "cd ./elixir; MIX_ENV=prod elixir -pa _build/prod/consolidated "+
-          "-S mix run serialization_showdown.ex "+
-          "#{serializer} #{method} #{iterations}"
-    stdout,stderr,status = Open3.capture3 cmd
-    return stdout.to_f if status.exitstatus == 0
-    puts stderr
-    raise "Elixir #{serializer} #{method}r failed"
+    cmd = "MIX_ENV=prod elixir -pa _build/prod/consolidated "+
+          "-S mix run serialization_showdown.ex"
+    run_cli_serializer "Elixir", serializer, method, cmd
   end
+
+  def self.run_nodejs_serializer(serializer, method)
+    cmd = "coffee ./serialization_showdown.coffee"
+    run_cli_serializer "Nodejs", serializer, method, cmd
+  end
+
+  def self.run_cli_serializer(language, serializer, method, cmd)
+    cmd = "cd ./#{language}; #{cmd} #{serializer} #{method} #{iterations}"
+    stdout,stderr,status = Open3.capture3 cmd
+    time = stdout.to_f
+    return time if status.exitstatus == 0 and time != 0
+    puts stderr
+    raise "#{language.capitalize} #{serializer} #{method}r failed"
+  end
+
 end
 
 require "./ruby/json_benchmark"
