@@ -17,13 +17,13 @@ defmodule SerializationShowdown.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [
-      {:message_pack, "~> 0.1.4"},
       {:msgpax, "~> 0.5"},
       {:json, "~> 0.3.0"},
       {:exjsx, "~> 3.1.0"},
       {:poison, "~> 1.3.1"},
       {:jiffy, github: "davisp/jiffy"},
-      {:msgpack, github: "msgpack/msgpack-erlang", branch: "master"}
+      {:msgpack, github: "msgpack/msgpack-erlang", branch: "master"},
+      {:bson, "~> 0.4.2"}
     ]
   end
 end

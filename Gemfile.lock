@@ -1,10 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    bson (2.3.0)
     msgpack (0.5.11)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson (~> 2.3)
   msgpack

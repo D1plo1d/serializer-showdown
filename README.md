@@ -1,4 +1,4 @@
-A comparison of Ruby and Elixir MsgPack and JSON serializers.
+A comparison of Ruby, Node and Elixir MsgPack, BSON and JSON serializers.
 
 ## Setup
 
@@ -22,25 +22,34 @@ Running the benchmarks on my 2011 Macbook Air (OSX 10.9.5) yeilds the following:
 
 Language             Deserializer         Real Time
 --------------------------------------------------------------------------------
-Elixir               Poison                9.06117
-Elixir               Msgpax                5.56455
-Elixir               Exjsx                12.45975
-Elixir               Jiffy                 1.36592
-Elixir               MsgpackErlang         2.19524
-Ruby                 Json                  5.13356
-Ruby                 Msgpack               2.29646
-Nodejs               Json                  0.96800
-Nodejs               Msgpack               2.06400
+Elixir               Bson                  6.99598
+Elixir               Poison                8.12813
+Elixir               Msgpax                5.45028
+Elixir               Exjsx                11.77435
+Elixir               Jiffy                 1.31725
+Elixir               MsgpackErlang         1.94611
+Ruby                 Json                  4.71681
+Ruby                 Bson                  9.04203
+Ruby                 Msgpack               2.06065
+Nodejs               Json                  1.89100
+Nodejs               Bson                  6.28800
+Nodejs               Msgpack               3.66900
 
 Language             Serializer           Real Time
 --------------------------------------------------------------------------------
-Elixir               Poison               47.72792
-Elixir               Msgpax               24.14008
-Elixir               Exjsx                32.74661
-Elixir               Jiffy                 2.83808
-Elixir               MsgpackErlang         3.89380
-Ruby                 Json                  3.88661
-Ruby                 Msgpack               0.58689
-Nodejs               Json                  1.32100
-Nodejs               Msgpack               2.57800
+Elixir               Bson                 20.00000
+Elixir               Poison               45.40536
+Elixir               Msgpax               24.59953
+Elixir               Exjsx                30.31368
+Elixir               Jiffy                 2.74940
+Elixir               MsgpackErlang         3.81657
+Ruby                 Json                  3.84673
+Ruby                 Bson                 11.70578
+Ruby                 Msgpack               0.48830
+Nodejs               Json                  1.12100
+Nodejs               Bson                 15.92100
+Nodejs               Msgpack               5.80200
 ```
+
+## Similar Benchmarks
+- https://github.com/eishay/jvm-serializers/wiki

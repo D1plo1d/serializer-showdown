@@ -12,8 +12,8 @@ module SerializationShowdown
     [
       # Elixir Serializers
       # ---------------------
-      # [:elixir, :MessagePackElixir], # <= broken - unable to encode
       # [:elixir, :Json], #              <= This is *very* slow!
+      [:elixir, :Bson],
       [:elixir, :Poison],
       [:elixir, :Msgpax],
       [:elixir, :Exjsx],
@@ -23,11 +23,13 @@ module SerializationShowdown
       # Ruby Serializers
       # ---------------------
       [:ruby,   :Json],
+      [:ruby,   :Bson],
       [:ruby,   :Msgpack],
 
       # Node Serializers
       # ---------------------
       [:nodejs, :Json],
+      [:nodejs, :Bson],
       [:nodejs, :Msgpack]
     ]
   end
@@ -64,6 +66,7 @@ module SerializationShowdown
   end
 
   def self.run_ruby_serializer(serializer, method)
+    require "./ruby/#{serializer.downcase}_benchmark"
     klass = SerializationShowdown.class_eval("#{serializer}Benchmark")
     instance = klass.new
     time = Benchmark.realtime do
@@ -85,15 +88,13 @@ module SerializationShowdown
   def self.run_cli_serializer(language, serializer, method, cmd)
     cmd = "cd ./#{language}; #{cmd} #{serializer} #{method} #{iterations}"
     stdout,stderr,status = Open3.capture3 cmd
-    time = stdout.to_f
+    time = stdout.strip.to_f
     return time if status.exitstatus == 0 and time != 0
+    puts stdout
     puts stderr
     raise "#{language.capitalize} #{serializer} #{method}r failed"
   end
 
 end
-
-require "./ruby/json_benchmark"
-require "./ruby/msgpack_benchmark"
 
 SerializationShowdown.run_all
