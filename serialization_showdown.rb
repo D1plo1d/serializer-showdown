@@ -5,7 +5,11 @@ require 'open3'
 module SerializationShowdown
 
   def self.iterations
-    100
+    ARGV[1] || 100
+  end
+
+  def self.filepath
+    ARGV[0]
   end
 
   def self.serializers
@@ -36,7 +40,7 @@ module SerializationShowdown
 
   def self.example_data
     @json unless @json.nil?
-    file = File.read('./test_data.json')
+    file = File.read(filepath || './test_data.json')
     @json = JSON.parse file
   end
 
@@ -49,6 +53,7 @@ module SerializationShowdown
     SerializationShowdown.example_data
 
     # Running the serializer benchmarks
+    puts "\nJSON: #{filepath}" if filepath
     puts "\n#{iterations} Iterations\n"
     [:deserialize, :serialize].each do |method|
       puts ""
