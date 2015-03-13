@@ -5,7 +5,7 @@ require 'open3'
 module SerializationShowdown
 
   def self.iterations
-    ARGV[1] || 100
+    (ARGV[1] || 100).to_i
   end
 
   def self.filepath
