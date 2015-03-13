@@ -26,6 +26,7 @@ module SerializationShowdown
 
       # Ruby Serializers
       # ---------------------
+      [:ruby,   :Oj],
       [:ruby,   :Json],
       [:ruby,   :Bson],
       [:ruby,   :Msgpack],

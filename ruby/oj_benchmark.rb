@@ -1,4 +1,6 @@
-class SerializationShowdown::JsonBenchmark
+require 'oj'
+
+class SerializationShowdown::OjBenchmark
 
   def initialize
     @data = SerializationShowdown.example_data
@@ -6,10 +8,10 @@ class SerializationShowdown::JsonBenchmark
   end
 
   def serialize
-    @data.to_json
+    Oj.dump @data
   end
 
   def deserialize
-    JSON.parse @serialized_data
+    Oj.load @serialized_data
   end
 end

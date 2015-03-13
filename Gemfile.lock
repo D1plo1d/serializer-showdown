@@ -3,6 +3,7 @@ GEM
   specs:
     bson (2.3.0)
     msgpack (0.5.11)
+    oj (2.9.9)
 
 PLATFORMS
   ruby
@@ -10,3 +11,4 @@ PLATFORMS
 DEPENDENCIES
   bson (~> 2.3)
   msgpack
+  oj
